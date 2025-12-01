@@ -1,0 +1,6 @@
+SQLalchemy
+dotenv
+psycopg2-binary
+uvicorn 
+fastapi
+passlib[argon2]
