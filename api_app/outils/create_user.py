@@ -1,4 +1,4 @@
-from .hashing_password import get_password_hash
+from .password_hash_cv import get_password_hash
 from api_app.schemas.userRegister import UserRegister
 from api_app.models.Users import USER
 
