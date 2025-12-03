@@ -20,6 +20,7 @@ def ZS_Classify(text,labels):
     if not text :
         return None
     API_URL = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-mnli"
+
     payload = {
         "inputs": text,
         "parameters": {
@@ -29,5 +30,26 @@ def ZS_Classify(text,labels):
     hf_response = requests.post(API_URL , headers=headers,json=payload,timeout=30)
          
     result = hf_response.json()
-    translated_text = result[0]['translation_text']
-    return translated_text
+    
+    if isinstance(result, list):
+        result = result[0]
+    
+    top_label = result["label"]
+    top_score = result["score"]
+    
+    return { 
+        "categorie": top_label,
+        "score" : top_score
+            }
+
+
+if __name__ == "__main__":
+    labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce",]
+    # text = "Nous devons renforcer la sécurité du serveur et améliorer le cloud."
+    text = "Notre dernière campagne sur les réseaux sociaux a généré une augmentation de 45% de l’engagement client en seulement deux semaines. Grâce à une stratégie basée sur le contenu vidéo court et des publications interactives, nous avons réussi à toucher une audience plus jeune et à renforcer la visibilité de la marque. Les retours sont globalement positifs et montrent que notre approche centrée sur l’utilisateur fonctionne."
+    result = ZS_Classify(text,labels)
+    categorie=result["categorie"]
+    score = result["score"]
+    print(categorie)
+    print(score)
+
