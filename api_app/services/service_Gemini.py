@@ -29,7 +29,7 @@ def build_prompt(text: str, categ: str):
 
      """
 
-def gemini_summary(text,categorie):
+def gemini_analysis(text,categorie):
 
     prompt = build_prompt(text,categorie)
     
@@ -41,7 +41,10 @@ def gemini_summary(text,categorie):
     resume = res["text_resume"]
     ton = res["ton"]
   
-    return resume,ton
+    return { 
+        "text_resume" : resume,
+        "ton" : ton
+        }
 
 
 
@@ -67,6 +70,8 @@ def gemini_summary(text,categorie):
 if __name__ == "__main__":
     # text = "Nous devons renforcer la sécurité du serveur et améliorer le cloud."
     text = "Notre dernière campagne sur les réseaux sociaux a généré une augmentation de 45% de l’engagement client en seulement deux semaines. Grâce à une stratégie basée sur le contenu vidéo court et des publications interactives, nous avons réussi à toucher une audience plus jeune et à renforcer la visibilité de la marque. Les retours sont globalement positifs et montrent que notre approche centrée sur l’utilisateur fonctionne."
-    resume,ton = gemini_summary(text=text,categorie="IT")
+    result = gemini_analysis(text=text,categorie="IT")
+    resume = result["text_resume"]
+    ton = result ["ton"]
     print(f"le resume est : {resume}")
     print(f"le ton est : {ton}")

@@ -3,10 +3,15 @@ from sqlalchemy.orm import Session
 from .database import Base,engine,SessionLocal
 from .schemas.userRegister import UserRegister
 from .schemas.userLogin import UserLogin
+from .schemas.AnalyzeResponse import analyzeResponse
+from .schemas.AnalyseRequest import analyzeRequest
+import requests
 from .models.Users import USER
 from .outils.create_user import create_user
 from .outils.password_hash_cv import verify_password_hash
 from .outils.token_cv import create_token
+from .services.service_HF import ZS_Classify
+from .services.service_Gemini import gemini_analysis
 
 
 
@@ -49,4 +54,28 @@ async def login(user : UserLogin,db: Session = Depends(get_db)):
      
      token = create_token(user_data) 
      return {"access_token": token }
-     
+
+
+# endpoint /analyze
+
+@app.post("/analyse",response_model=analyzeResponse)
+
+async def analyze_text(request: analyzeRequest) :
+    text = request.text
+
+    labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce"]  
+    HF_result = ZS_Classify(text,labels)
+    categorie = HF_result["categorie"]
+    score = round(HF_result["score"] * 100, 2)
+    Gemini_result = gemini_analysis(text,categorie)
+    resume = Gemini_result["text_resume"]
+    ton = Gemini_result ["ton"]
+    
+    global_result = {
+    "categorie": categorie,
+    "score": score,
+    "resume": resume,
+    "ton": ton
+    
+      }
+    return analyzeResponse(**global_result)

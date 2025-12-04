@@ -13,7 +13,7 @@ if not HF_API_TOKEN:
     raise ValueError("La clé d'API Hugging Face n'est pas définie. Veuillez la mettre dans le fichier .env")
 headers = {"Authorization": f"Bearer {HF_API_TOKEN}"}
 
-API_URL = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-mnli"
+
 
 def ZS_Classify(text,labels):
      
@@ -44,7 +44,7 @@ def ZS_Classify(text,labels):
 
 
 if __name__ == "__main__":
-    labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce",]
+    labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce"]
     # text = "Nous devons renforcer la sécurité du serveur et améliorer le cloud."
     text = "Notre dernière campagne sur les réseaux sociaux a généré une augmentation de 45% de l’engagement client en seulement deux semaines. Grâce à une stratégie basée sur le contenu vidéo court et des publications interactives, nous avons réussi à toucher une audience plus jeune et à renforcer la visibilité de la marque. Les retours sont globalement positifs et montrent que notre approche centrée sur l’utilisateur fonctionne."
     result = ZS_Classify(text,labels)
