@@ -1,15 +1,14 @@
+import requests
 from fastapi import FastAPI,Depends,HTTPException
 from sqlalchemy.orm import Session
 from .database import Base,engine,SessionLocal
 from .schemas.user import UserRegister ,UserLogin
 from .schemas.analyse import analyzeRequest , analyzeResponse
-import requests
 from .models.Users import USER
 from .Crud.crud_user import create_user
 from .core.security import verify_password_hash ,create_token ,verify_token
 from .services.service_HF import ZS_Classify
 from .services.service_Gemini import gemini_analysis
-
 from .core.config import SECRET_KEY
 from jose import jwt 
 from fastapi.security import HTTPBearer, HTTPBasicCredentials 
@@ -30,6 +29,8 @@ def get_db():
         db.close()
 
 db = SessionLocal()
+
+
 @app.post('/register')
 async def Register(user : UserRegister ,db: Session = Depends(get_db)) :
    existing_user = db.query(USER).filter(USER.username == user.username ).first()
@@ -88,11 +89,13 @@ async def analyze_text(request: analyzeRequest,token : HTTPBasicCredentials=Depe
   
     if token_decode :
        text = request.text
-     
+       # Appel à la service hagging face
        labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce"]  
        HF_result = ZS_Classify(text,labels)
        categorie = HF_result["categorie"]
        score = round(HF_result["score"] * 100, 2)
+       
+       # Appel à la service Gemini
        Gemini_result = gemini_analysis(text,categorie)
        resume = Gemini_result["text_resume"]
        ton = Gemini_result ["ton"]
