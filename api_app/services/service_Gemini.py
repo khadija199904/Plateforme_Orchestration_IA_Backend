@@ -1,27 +1,18 @@
 from google import genai
 from dotenv import load_dotenv
-import os
-import sys
+import requests
+from fastapi import HTTPException
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(BASE_DIR)
+from api_app.schemas.serv_gemini import GeminiResponse
+from api_app.core.config import GEMINI_API_KEY
 
-from schemas.Output_SR_gemini import OutputGemini
-
-
-
-
-
-load_dotenv()
-
-GEMINI_API_KEY = os.getenv("GEMINI_API_KE")
 
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 
-def build_prompt(text: str, categ: str):
+def build_prompt(text,categ):
     return f"""
    Analyse le texte ci-dessous classé sous le label "{categ}" :
    pour déterminer sa tonalité (positive, neutre ou négative),
@@ -31,12 +22,15 @@ def build_prompt(text: str, categ: str):
 
 def gemini_analysis(text,categorie):
 
-    prompt = build_prompt(text,categorie)
-    
+  prompt = build_prompt(text,categorie)
+  try :
     response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt,config={
         "response_mime_type": "application/json",
-        "response_json_schema": OutputGemini.model_json_schema(),
+        "response_json_schema": GeminiResponse.model_json_schema(),
     },)
+    # Getsion de reponse mal formée
+    if not response.parsed:
+        raise ValueError("Réponse Gemini mal formée")
     res = response.parsed
     resume = res["text_resume"]
     ton = res["ton"]
@@ -45,7 +39,10 @@ def gemini_analysis(text,categorie):
         "text_resume" : resume,
         "ton" : ton
         }
-
+  # Gestion API down
+  except requests.ConnectError:
+        raise HTTPException(status_code=503, detail="Impossible de se connecter à Gemini")
+  
 
 
 

@@ -1,22 +1,23 @@
 from fastapi import FastAPI,Depends,HTTPException
 from sqlalchemy.orm import Session
 from .database import Base,engine,SessionLocal
-from .schemas.userRegister import UserRegister
-from .schemas.userLogin import UserLogin
-from .schemas.AnalyzeResponse import analyzeResponse
-from .schemas.AnalyseRequest import analyzeRequest
+from .schemas.user import UserRegister ,UserLogin
+from .schemas.analyse import analyzeRequest , analyzeResponse
 import requests
 from .models.Users import USER
-from .outils.create_user import create_user
-from .outils.password_hash_cv import verify_password_hash
-from .outils.token_cv import create_token
+from .Crud.crud_user import create_user
+from .core.security import verify_password_hash ,create_token ,verify_token
 from .services.service_HF import ZS_Classify
 from .services.service_Gemini import gemini_analysis
 
+from .core.config import SECRET_KEY
+from jose import jwt 
+from fastapi.security import HTTPBearer, HTTPBasicCredentials 
 
 
 
 
+type_token = HTTPBearer()
 app = FastAPI(title="Plateforme Fullstack d’Orchestration IA ")
 
 Base.metadata.create_all(bind=engine)
@@ -28,13 +29,12 @@ def get_db():
     finally :
         db.close()
 
-
+db = SessionLocal()
 @app.post('/register')
 async def Register(user : UserRegister ,db: Session = Depends(get_db)) :
    existing_user = db.query(USER).filter(USER.username == user.username ).first()
    if existing_user:
          raise HTTPException(status_code=400,detail="Username Déja existe")
-   
    new_user = create_user(user)
    print(new_user)
    db.add(new_user)
@@ -57,12 +57,10 @@ async def login(user : UserLogin,db: Session = Depends(get_db)):
 
 
 # endpoint /analyze
-
 @app.post("/analyse",response_model=analyzeResponse)
 
-async def analyze_text(request: analyzeRequest) :
+async def analyze_text(request: analyzeRequest,token = Depends(verify_token)) :
     text = request.text
-
     labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce"]  
     HF_result = ZS_Classify(text,labels)
     categorie = HF_result["categorie"]
@@ -79,3 +77,34 @@ async def analyze_text(request: analyzeRequest) :
     
       }
     return analyzeResponse(**global_result)
+
+
+# endpoint /analyze for test HTTPBasicCredentials
+@app.post("/test_analyse",response_model=analyzeResponse)
+
+async def analyze_text(request: analyzeRequest,token : HTTPBasicCredentials=Depends(type_token)) :
+    my_token = token.credentials
+    token_decode = jwt.decode(my_token,SECRET_KEY )
+  
+    if token_decode :
+       text = request.text
+     
+       labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce"]  
+       HF_result = ZS_Classify(text,labels)
+       categorie = HF_result["categorie"]
+       score = round(HF_result["score"] * 100, 2)
+       Gemini_result = gemini_analysis(text,categorie)
+       resume = Gemini_result["text_resume"]
+       ton = Gemini_result ["ton"]
+    
+       global_result = {
+           "categorie": categorie,
+           "score": score,
+           "resume": resume,
+           "ton": ton
+    
+            }
+       return analyzeResponse(**global_result)
+    
+    else : 
+        return {"message": "Token d'authentification manquant"}

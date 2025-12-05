@@ -6,4 +6,3 @@ class GeminiResponse(BaseModel):
 
     class Config:
         from_attributes = True
-
