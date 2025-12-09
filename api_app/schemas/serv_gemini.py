@@ -1,8 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,ConfigDict
 
 class GeminiResponse(BaseModel):
     text_resume : str
     ton : str
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(
+        extra="forbid",  # interdit les champs supplémentaires
+        validate_assignment=True
+    )

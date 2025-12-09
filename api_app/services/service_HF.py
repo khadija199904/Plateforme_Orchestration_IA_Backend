@@ -45,12 +45,12 @@ def ZS_Classify(text,labels):
        top_label = result["label"]
        top_score = result["score"]
        
-       # GESTION DES SCORES FAIBLES
-       seuil = 0.6 
-       if top_score < seuil :
-           top_label = "Catégorie Inconnu"
-       else : 
-         top_label = top_label
+    #    # GESTION DES SCORES FAIBLES
+    #    seuil = 0.6 
+    #    if top_score < seuil :
+    #        top_label = "Catégorie Inconnu"
+    #    else : 
+    #      top_label = top_label
 
 
        return { 
@@ -76,8 +76,9 @@ def ZS_Classify(text,labels):
 
 if __name__ == "__main__":
     labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce"]
+    text = "Découvrez notre nouvelle solution conçue pour augmenter vos ventes et renforcer votre stratégie marketing. Grâce à une communication ciblée et un positionnement clair, vous attirez plus de clients et développez votre marque efficacement."
     # text = "Nous devons renforcer la sécurité du serveur et améliorer le cloud."
-    text = "Notre dernière campagne sur les réseaux sociaux a généré une augmentation de 45% de l’engagement client en seulement deux semaines. Grâce à une stratégie basée sur le contenu vidéo court et des publications interactives, nous avons réussi à toucher une audience plus jeune et à renforcer la visibilité de la marque. Les retours sont globalement positifs et montrent que notre approche centrée sur l’utilisateur fonctionne."
+    # text = "Notre dernière campagne sur les réseaux sociaux a généré une augmentation de 45% de l’engagement client en seulement deux semaines. Grâce à une stratégie basée sur le contenu vidéo court et des publications interactives, nous avons réussi à toucher une audience plus jeune et à renforcer la visibilité de la marque. Les retours sont globalement positifs et montrent que notre approche centrée sur l’utilisateur fonctionne."
     result = ZS_Classify(text,labels)
     categorie=result["categorie"]
     score = result["score"]

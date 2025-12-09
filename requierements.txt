@@ -6,3 +6,4 @@ fastapi
 passlib[argon2]
 google-genai
 requests
+pytest-mock
