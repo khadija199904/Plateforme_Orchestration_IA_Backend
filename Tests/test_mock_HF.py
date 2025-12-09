@@ -21,7 +21,7 @@ def test_mock_HaggingFace (mocker) :
               'label': 'Marketing',
               'score': 0.8013417720794678
               }
-
+    mocker.patch()
     mocker.patch("requests.post",return_value = mock_response)
 
     res = ZS_Classify(text,labels)

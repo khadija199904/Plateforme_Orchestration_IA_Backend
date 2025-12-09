@@ -90,8 +90,8 @@ async def login(user : UserLogin,db: Session = Depends(get_db)):
 
 # endpoint /analyze
 @app.post("/analyse",response_model=analyzeResponse)
-
-async def analyze_text(request: analyzeRequest,token = Depends(verify_token)) :
+async def analyze_text(request: analyzeRequest) :
+# async def analyze_text(request: analyzeRequest,token = Depends(verify_token)) :
     text = request.text
     labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce"]  
     HF_result = ZS_Classify(text,labels)
