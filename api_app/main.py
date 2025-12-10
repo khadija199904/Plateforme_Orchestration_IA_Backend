@@ -90,24 +90,10 @@ async def login(user : UserLogin,db: Session = Depends(get_db)):
 
 # endpoint /analyze
 @app.post("/analyse",response_model=analyzeResponse)
-async def analyze_text(request: analyzeRequest) :
-# async def analyze_text(request: analyzeRequest,token = Depends(verify_token)) :
+
+async def analyze_text(request: analyzeRequest,token = Depends(verify_token)) :
     text = request.text
-    labels = ["Finance", "RH", "IT", "Opérations","Marketing","Commerce"]  
-    HF_result = ZS_Classify(text,labels)
-    categorie = HF_result["categorie"]
-    score = round(HF_result["score"] * 100, 2)
-    Gemini_result = gemini_analysis(text,categorie)
-    resume = Gemini_result["text_resume"]
-    ton = Gemini_result ["ton"]
-    
-    global_result = {
-    "categorie": categorie,
-    "score": score,
-    "resume": resume,
-    "ton": ton
-    
-      }
+    global_result = analyse(text)
     return analyzeResponse(**global_result)
 
 

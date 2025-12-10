@@ -29,3 +29,12 @@ def analyse(text):
     }
     
     return global_result
+
+
+
+
+if __name__ == "__main__":
+    
+    text = "Nous devons renforcer la sécurité du serveur et améliorer le cloud."
+    result = analyse(text)
+    print(result)

@@ -34,7 +34,7 @@ def gemini_analysis(text,categorie):
     res = response.parsed
     resume = res["text_resume"]
     ton = res["ton"]
-    print(res)
+    
     return { 
         "text_resume" : resume,
         "ton" : ton
