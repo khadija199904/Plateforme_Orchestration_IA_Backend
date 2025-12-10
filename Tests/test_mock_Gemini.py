@@ -11,20 +11,25 @@ from fastapi import HTTPException
 from unittest.mock import Mock,patch
 from api_app.services.service_Gemini import gemini_analysis
 
-def test_gemini_success (mocker):
+
+@pytest.fixture
+def mock_gemini(mocker):
+    fake_response = Mock()
+    fake_response.status_code = 200
+    mock = mocker.patch("api_app.services.service_Gemini.client.models.generate_content")
+    return mock
+def test_gemini_success (mock_gemini):
     categorie = "Marketing"
     text = "Découvrez notre nouvelle solution conçue pour augmenter vos ventes et renforcer votre stratégie marketing. Grâce à une communication ciblée et un positionnement clair, vous attirez plus de clients et développez votre marque efficacement."
 
-    fake_response = Mock()
-    fake_response.status_code = 200
+   
     
-    fake_response.parsed = {
+    mock_gemini.return_value.parsed = {
         "text_resume": 'Découvrez notre solution qui augmente vos ventes, attire les clients '
         'et renforce efficacement votre marketing.',
         "ton": 'positive'
         }
     
-    mocker.patch("api_app.services.service_Gemini.client.models.generate_content", return_value=fake_response) 
     resultat = gemini_analysis(text,categorie)
 
 
@@ -38,10 +43,9 @@ def test_gemini_success (mocker):
    
    
   # Test mock de service Geimini API Down 
-def test_Gemini_Api_down(mocker):
-    mocker.patch("api_app.services.service_Gemini.client.models.generate_content", 
-                 side_effect=requests.ConnectionError
-                 ) 
+def test_Gemini_Api_down(mock_gemini):
+                 
+    mock_gemini.side_effect=requests.ConnectionError            
     
     with pytest.raises(HTTPException) as err:
         gemini_analysis("txt", "IT")
@@ -49,15 +53,12 @@ def test_Gemini_Api_down(mocker):
     assert err.value.status_code == 503 
 # test de service Gemini (reponse mal formé)
 
-def test_gemini_malformed(mocker):
+def test_gemini_malformed(mock_gemini):
 
-    fake_response = Mock()
-    fake_response.parsed = None
+    
+    mock_gemini.return_value.parsed = None
 
-    mocker.patch("api_app.services.service_Gemini.client.models.generate_content", 
-                 return_value = fake_response
-                 ) 
+    
     with pytest.raises(ValueError) as err:
         gemini_analysis("txt", "IT")
-    
     

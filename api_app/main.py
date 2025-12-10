@@ -78,8 +78,7 @@ async def Register(user : UserRegister ,db: Session = Depends(get_db)) :
 async def login(user : UserLogin,db: Session = Depends(get_db)):
  
      user_data = db.query(USER).filter(USER.username == user.username ).first()
-     # Vérification username et password
-     print("HASH IN DB:", repr(user_data.password_hash))
+     
      if not user_data or not verify_password_hash(user.password,user_data.password_hash):
         raise HTTPException(status_code=401,detail="Access Failed (Incorrect username or password)")
      
