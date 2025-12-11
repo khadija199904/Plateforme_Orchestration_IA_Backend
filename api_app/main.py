@@ -7,8 +7,6 @@ from .schemas.analyse import analyzeRequest , analyzeResponse
 from .models.Users import USER
 from .Crud.crud_user import create_user
 from .core.security import verify_password_hash ,create_token ,verify_token
-from .services.service_HF import ZS_Classify
-from .services.service_Gemini import gemini_analysis
 from .services.analyse_text import analyse
 from .core.config import SECRET_KEY
 from jose import jwt 
