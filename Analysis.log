@@ -266,3 +266,122 @@
 2025-12-11 18:04:01,070 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte 
 2025-12-11 18:04:11,794 - ERROR - ERROR | Tâche : Analyse texte  | HTTPException : Score faible (15.51%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
 2025-12-11 18:04:11,794 - INFO - PERFORMANCE | Fin : Analyse texte  | Durée : 10723.76 ms (10.72 s)
+2025-12-11 19:19:38,711 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:19:38,711 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:20:09,628 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:20:09,629 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30917.19 ms (30.92 s)
+2025-12-11 19:20:09,630 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:20:09,630 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:20:31,433 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (9.38%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-11 19:20:31,433 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 21803.27 ms (21.80 s)
+2025-12-11 19:20:31,471 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:20:31,471 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:21:02,625 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:21:02,625 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 31154.67 ms (31.15 s)
+2025-12-11 19:21:03,708 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:21:03,708 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:21:20,991 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (9.38%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-11 19:21:20,992 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 17283.82 ms (17.28 s)
+2025-12-11 19:21:31,050 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:21:31,050 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:21:50,127 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (9.38%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-11 19:21:50,129 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 19079.40 ms (19.08 s)
+2025-12-11 19:23:03,446 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:23:03,446 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:23:34,169 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:23:34,169 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30723.60 ms (30.72 s)
+2025-12-11 19:25:37,518 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:25:37,518 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:26:08,298 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:26:08,298 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30780.71 ms (30.78 s)
+2025-12-11 19:26:10,538 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:26:10,538 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:26:41,196 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:26:41,197 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30658.39 ms (30.66 s)
+2025-12-11 19:27:20,257 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:27:20,257 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:27:51,116 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:27:51,117 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30859.40 ms (30.86 s)
+2025-12-11 19:29:33,712 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:29:33,712 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:30:04,794 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:30:04,794 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 31081.81 ms (31.08 s)
+2025-12-11 19:40:56,130 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:40:56,131 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:41:26,883 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:41:26,883 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30753.06 ms (30.75 s)
+2025-12-11 19:41:36,445 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:41:36,446 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:42:07,684 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 19:42:07,684 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 31239.55 ms (31.24 s)
+2025-12-11 19:50:55,410 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 19:50:55,411 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 19:51:10,356 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (27.44%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-11 19:51:10,356 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 14945.90 ms (14.95 s)
+2025-12-11 20:00:21,543 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:00:21,543 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:00:35,209 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (27.44%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-11 20:00:35,212 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 13669.37 ms (13.67 s)
+2025-12-11 20:04:19,231 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:04:19,232 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:04:50,027 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:04:50,028 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30796.29 ms (30.80 s)
+2025-12-11 20:04:50,035 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:04:50,035 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:05:04,413 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (27.44%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-11 20:05:04,413 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 14378.30 ms (14.38 s)
+2025-12-11 20:05:04,441 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:05:04,442 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:05:15,543 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (27.44%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-11 20:05:15,543 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 11102.19 ms (11.10 s)
+2025-12-11 20:20:09,443 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:20:09,444 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:20:25,947 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 16503.16 ms (16.50 s)
+2025-12-11 20:23:39,832 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:23:39,832 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:24:07,008 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (16.33%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-11 20:24:07,008 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 27176.57 ms (27.18 s)
+2025-12-11 20:24:07,017 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:24:07,017 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:24:29,301 - CRITICAL - ERREUR CRITIQUE | Tâche : Analyse texte | Erreur : 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+2025-12-11 20:24:29,302 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 22285.03 ms (22.29 s)
+2025-12-11 20:33:54,914 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:33:54,914 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:34:25,750 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:34:25,750 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30836.10 ms (30.84 s)
+2025-12-11 20:35:14,621 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:35:14,621 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:35:45,433 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:35:45,433 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30811.95 ms (30.81 s)
+2025-12-11 20:43:09,026 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:43:09,027 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:43:39,902 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:43:39,903 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30876.19 ms (30.88 s)
+2025-12-11 20:44:21,116 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:44:21,116 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:44:52,039 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:44:52,039 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30922.70 ms (30.92 s)
+2025-12-11 20:56:39,978 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:56:39,978 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:57:10,980 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:57:10,980 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 31002.67 ms (31.00 s)
+2025-12-11 20:57:19,007 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:57:19,007 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:57:49,656 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:57:49,656 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30648.48 ms (30.65 s)
+2025-12-11 20:57:55,850 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:57:55,850 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:58:26,569 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:58:26,570 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30719.26 ms (30.72 s)
+2025-12-11 20:58:54,124 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 20:58:54,125 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 20:59:24,880 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 20:59:24,880 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30755.34 ms (30.76 s)
+2025-12-11 21:06:07,409 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 21:06:07,409 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 21:06:38,189 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 21:06:38,189 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30780.02 ms (30.78 s)
+2025-12-11 21:06:47,630 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-11 21:06:47,630 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-11 21:07:18,350 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-11 21:07:18,351 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30720.95 ms (30.72 s)

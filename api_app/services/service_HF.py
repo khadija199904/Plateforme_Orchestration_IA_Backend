@@ -42,7 +42,7 @@ def ZS_Classify(text,labels):
        
        top_score = round(result["score"]* 100, 2)
         # GESTION DES SCORES FAIBLES
-       if top_score < 60:
+       if top_score < 20:
           raise HTTPException(
             status_code=400,
             detail=f"Score faible ({top_score}%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité."

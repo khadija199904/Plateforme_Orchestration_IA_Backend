@@ -1,5 +1,5 @@
-from .service_HF import ZS_Classify
-from .service_Gemini import gemini_analysis
+from ..services.service_HF import ZS_Classify
+from ..services.service_Gemini import gemini_analysis
 
 def analyse(text):
     
