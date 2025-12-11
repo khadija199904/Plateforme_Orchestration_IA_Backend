@@ -3,7 +3,7 @@ import time
 from fastapi import HTTPException
 
 # Logger global orchestration
-logger = logging.getLogger("Orchestration_Complète")
+logger = logging.getLogger("Orchestration_Complete")
 logger.setLevel(logging.DEBUG)
 
 handler = logging.FileHandler("Analysis.log", mode="a", encoding="utf-8")
@@ -12,7 +12,7 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
-# Fonction utilitaire de logging pour l’orchestration IA
+# Fonction utilitaire de logging pour l’orchestration
 
 def log_task(task_name, func, *args, **kwargs):
 

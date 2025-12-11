@@ -21,6 +21,8 @@ async def Register(user : UserRegister ,db: Session = Depends(get_db)) :
    db.refresh(new_user)
    return {"message": "Compte créé avec succès", "username": new_user.username}
 
+
+
 # Endpoint login protégée
 
 @router.post("/login") 

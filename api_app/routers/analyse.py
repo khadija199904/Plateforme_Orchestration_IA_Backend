@@ -15,11 +15,12 @@ async def analyze_text(request: analyzeRequest,token = Depends(verify_token)) :
     
     try:
         #  analyse avec logging
-        global_result = log_task( "Analyse texte ", analyse, text)
+        global_result = log_task( "Analyse texte", analyse, text)
         return analyzeResponse(**global_result)
+    
+
     except HTTPException as e:
-        # On renvoie simplement l'exception déjà levée par le service HF
         raise e
+    
     except Exception:
-        # Autres erreurs critiques
         raise HTTPException(status_code=500, detail="Erreur critique lors de l'analyse")
