@@ -20,19 +20,14 @@ def ZS_Classify(text,labels):
         return None
     API_URL = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-mnli"
 
-    payload = {
-        "inputs": text,
-        "parameters": {
-            "candidate_labels": labels
-        }
-       }
+    payload = { "inputs": text, "parameters": { "candidate_labels": labels } }
 
     try : 
 
        hf_response = requests.post(API_URL , headers=headers,json=payload,timeout=30)
        hf_response.raise_for_status()
+
        # GESTION DE LA RÉPONSE INVALIDE
-       
        try :
           result = hf_response.json()
        except ValueError:
@@ -45,13 +40,13 @@ def ZS_Classify(text,labels):
        top_label = result["label"]
        top_score = result["score"]
        
-    #    # GESTION DES SCORES FAIBLES
-    #    seuil = 0.6 
-    #    if top_score < seuil :
-    #        top_label = "Catégorie Inconnu"
-    #    else : 
-    #      top_label = top_label
-
+       top_score = round(result["score"]* 100, 2)
+        # GESTION DES SCORES FAIBLES
+       if top_score < 60:
+          raise HTTPException(
+            status_code=400,
+            detail=f"Score faible ({top_score}%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité."
+        )
 
        return { 
            
@@ -61,11 +56,16 @@ def ZS_Classify(text,labels):
               }
     #  BLOCS D'EXCEPTIONS 
     except requests.exceptions.Timeout :
-         raise HTTPException(status_code=504, detail="Hugging Face ne répond pas (Timeout).")
+         raise HTTPException(status_code=504, detail="Hugging Face ne répond pas.")
     except requests.exceptions.ConnectionError :
          raise HTTPException(status_code=502, detail="Impossible de se connecter au service Hugging Face (Erreur Réseau).")
+    except HTTPException as he:
+        # On relance les exceptions HTTP créées manuellement (comme celle du score faible)
+        raise he
     except Exception as e:
-         raise HTTPException(status_code=500, detail=f"Erreur interne du serveur : {e}")
+        print(f"Erreur inattendue : {e}")
+        raise HTTPException(status_code=500, detail=f"Erreur interne du serveur : {str(e)}")
+    
     
 
 

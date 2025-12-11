@@ -4,6 +4,7 @@ from .database import Base, engine
 from .routers import auth, analyse 
 
 
+
 app = FastAPI(title="Plateforme Fullstack d’Orchestration IA ")
 
 
@@ -25,3 +26,4 @@ Base.metadata.create_all(bind=engine)
 #  Routes
 app.include_router(auth.router)
 app.include_router(analyse.router)
+
