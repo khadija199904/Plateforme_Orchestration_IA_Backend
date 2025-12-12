@@ -41,12 +41,12 @@ graph LR
     %% Le texte entre crochets [] ci-dessous est celui qui s'affiche dans la zone
     subgraph DC [🐳 Docker Compose]
         direction LR
-        UI[ Frontend Container]:::docker
+        UI[ Frontend ]:::docker
         
         subgraph Backend [⚡ Backend API]
             direction TB
             Router[⚙️ FastAPI Router]:::docker
-            Logic[🧠 FastAPI Logic]:::docker
+            Logic[🧠 backend Logic]:::docker
         end
         
         DB[(🗄️ Database)]:::db
@@ -61,7 +61,7 @@ graph LR
     %% --- CONNEXIONS ---
     User -->|Http| UI
     UI -->|API Call| Router
-    Router -->|Dispatch| Logic
+    Router --> Logic
     Logic -->|SQLalchemy| DB
     
     %% Connexions vers les IAs
