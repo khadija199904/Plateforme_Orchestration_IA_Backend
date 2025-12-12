@@ -1,5 +1,5 @@
-from .service_HF import ZS_Classify
-from .service_Gemini import gemini_analysis
+from ..services.service_HF import ZS_Classify
+from ..services.service_Gemini import gemini_analysis
 
 def analyse(text):
     
@@ -13,7 +13,7 @@ def analyse(text):
     #  Hugging Face
     HF_result = ZS_Classify(text, labels)
     categorie = HF_result["categorie"]
-    score = round(HF_result["score"] * 100, 2)
+    score = HF_result["score"] 
     
     #  Gemini
     Gemini_result = gemini_analysis(text, categorie)
