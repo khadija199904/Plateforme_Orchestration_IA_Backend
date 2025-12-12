@@ -69,8 +69,8 @@ graph LR
     Logic -.->|Request| GEM
 
     %% Style du cadre (Fond blanc, bordure bleue pointillée)
-    style DC fill:#FFFFFF,stroke:#1565C0,stroke-width:3px,stroke-dasharray: 5 5
-    style AI_Services fill:#F1F8E9,stroke:#2E7D32,stroke-width:2px,stroke-dasharray: 5 5
+    style DC fill:#FFFFFF,stroke:#1565C0,stroke-width:3px,stroke-dasharray:5 5,color:#000000,font-size:16px
+    style AI_Services fill:#F1F8E9,stroke:#2E7D32,stroke-width:2px,stroke-dasharray:5 5,color:#000000,font-size:14px
 
 ```
 
