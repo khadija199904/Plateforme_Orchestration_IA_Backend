@@ -74,7 +74,7 @@ graph LR
 
 ```
 
-## Workflow d'Analyse (Séquence)
+## Workflow d'Analyse du projet 
 
 ```mermaid
 sequenceDiagram
