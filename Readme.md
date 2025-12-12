@@ -95,13 +95,13 @@ sequenceDiagram
     B->>D: Sauvegarde/Vérification User (Table USER)
     note right of B: S'assure que l'utilisateur existe<br/>pour lier les logs ensuite
     
-    rect rgb(240, 248, 255)
+    rect rgba(91, 161, 223, 1)
         note right of B: Étape 1 : Classification
         B->>HF: POST (Texte) -> Bart-Large-MNLI
         HF-->>B: Retourne {Label: "Finance", Score: 0.96}
     end
     
-    rect rgb(255, 240, 245)
+    rect rgba(218, 89, 132, 1)
         note right of B: Étape 2 : Synthèse Contextuelle
         B->>B: Création Prompt: "Agis comme un expert en Finance..."
         B->>G: POST (Prompt + Texte Original)
