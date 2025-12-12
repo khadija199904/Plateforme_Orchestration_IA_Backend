@@ -10,6 +10,12 @@ router = APIRouter( prefix="/auth", tags=["Authentication"])
 
 @router.post('/register')
 async def Register(user : UserRegister ,db: Session = Depends(get_db)) :
+
+   if not user.username.strip() or not user.password.strip() or not user.email.strip():
+    raise HTTPException(
+        status_code=400,
+        detail="Veuillez remplir tous les champs : nom d'utilisateur et mot de passe."
+    )
    existing_user = db.query(USER).filter(USER.username == user.username ).first()
    if existing_user:
          raise HTTPException(status_code=400,detail="Compte Déja existe")
@@ -27,7 +33,10 @@ async def Register(user : UserRegister ,db: Session = Depends(get_db)) :
 
 @router.post("/login") 
 async def login(user : UserLogin,db: Session = Depends(get_db)):
- 
+     
+     if not user.username.strip() or not user.password.strip():
+        raise HTTPException(status_code=400, detail="Username et password requis")
+     
      user_data = db.query(USER).filter(USER.username == user.username ).first()
      
      if not user_data or not verify_password_hash(user.password,user_data.password_hash):

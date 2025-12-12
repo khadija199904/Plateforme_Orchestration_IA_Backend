@@ -19,22 +19,22 @@ def client() :
 
 
 @pytest.fixture
-def fake_verify_token():
-    
-    app.dependency_overrides[verify_token] = lambda: "fake_user"
+def fake_token(mocker):
+    app.dependency_overrides = {}
+    app.dependency_overrides[verify_token] = lambda: {"Username": "lofi"}
     
 
 
-def test_analyse_endpoint_success(client, fake_verify_token, mocker):
+def test_analyse_endpoint_success(client, fake_token, mocker):
     
     payload = {"text": "Nous devons renforcer la sécurité du serveur."}
 
    #  Mock Hugging Face
-    mock_hf = mocker.patch("api_app.services.analyse_text.ZS_Classify")
-    mock_hf.return_value = {"categorie": "IT", "score": 0.9512}
+    mock_hf = mocker.patch("api_app.outils.analyse_text.ZS_Classify")
+    mock_hf.return_value = {"categorie": "IT", "score": 95.12}
 
     # Mock Gemini
-    mock_gemini = mocker.patch("api_app.services.analyse_text.gemini_analysis")
+    mock_gemini = mocker.patch("api_app.outils.analyse_text.gemini_analysis")
     mock_gemini.return_value = {"text_resume": "Résumé test", "ton": "neutre"}
 
     # Appel (POST /analyse)

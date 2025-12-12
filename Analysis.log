@@ -424,3 +424,27 @@
 2025-12-12 11:49:37,651 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
 2025-12-12 11:49:37,651 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
 2025-12-12 11:49:55,435 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 17783.85 ms (17.78 s)
+2025-12-12 22:33:28,466 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 22:33:28,467 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 22:33:45,550 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (7.6%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-12 22:33:45,550 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 17084.11 ms (17.08 s)
+2025-12-12 22:37:29,589 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 22:37:29,589 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 22:37:48,037 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (13.1%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-12 22:37:48,038 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 18448.84 ms (18.45 s)
+2025-12-12 22:38:44,075 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 22:38:44,076 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 22:39:10,711 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 26635.65 ms (26.64 s)
+2025-12-12 22:41:48,676 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 22:41:48,676 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 22:42:21,847 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 33171.13 ms (33.17 s)
+2025-12-12 22:43:14,807 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 22:43:14,807 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 22:43:29,037 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Score faible (8.55%). Veuillez enrichir votre texte pour assurer une catégorisation précise, étape essentielle pour produire un résumé de qualité.
+2025-12-12 22:43:29,037 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 14230.19 ms (14.23 s)
+2025-12-12 23:15:56,823 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 23:15:56,824 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 23:15:56,824 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 0.85 ms (0.00 s)
+2025-12-12 23:16:30,595 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 23:16:30,596 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 23:16:30,596 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 0.57 ms (0.00 s)

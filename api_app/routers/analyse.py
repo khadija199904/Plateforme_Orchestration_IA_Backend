@@ -17,7 +17,7 @@ router = APIRouter( tags=["Analysis"])
 
 async def analyze_text(request: analyzeRequest,token = Depends(verify_token), db: Session = Depends(get_db)) :
     text = request.text
-
+    
     username = token["Username"]
 
     # Chercher l'utilisateur en base

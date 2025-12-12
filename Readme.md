@@ -173,6 +173,7 @@ FastAPI génère automatiquement une documentation interactive Swagger. Voici le
 
 |  Incident  |   Code HTTP |
 |------------|--------------|
+| champs vides | 40O Bad request |
 | Token invalide ou absent | 401 Unauthorized |
 | Données envoyées invalides | 422 Unprocessable Entity |
 | Hugging Face Timeout | 504 Gateway Timeout |
