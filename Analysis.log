@@ -385,3 +385,42 @@
 2025-12-11 21:06:47,630 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
 2025-12-11 21:07:18,350 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
 2025-12-11 21:07:18,351 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30720.95 ms (30.72 s)
+2025-12-12 10:57:55,406 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 10:57:55,413 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 10:58:11,934 - CRITICAL - ERREUR CRITIQUE | Tâche : Analyse texte | Erreur : 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+2025-12-12 10:58:11,934 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 16528.68 ms (16.53 s)
+2025-12-12 10:58:49,645 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 10:58:49,646 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 10:58:59,814 - CRITICAL - ERREUR CRITIQUE | Tâche : Analyse texte | Erreur : 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+2025-12-12 10:58:59,814 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 10168.95 ms (10.17 s)
+2025-12-12 10:59:04,056 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 10:59:04,056 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 10:59:14,626 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 10569.32 ms (10.57 s)
+2025-12-12 11:00:24,597 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:00:24,597 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:00:43,115 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 18517.59 ms (18.52 s)
+2025-12-12 11:00:50,114 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:00:50,114 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:01:01,724 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 11610.28 ms (11.61 s)
+2025-12-12 11:01:13,925 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:01:13,925 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:01:40,289 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 26364.12 ms (26.36 s)
+2025-12-12 11:02:59,887 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:02:59,887 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:03:30,761 - ERROR - ERROR | Tâche : Analyse texte | HTTPException : Hugging Face ne répond pas.
+2025-12-12 11:03:30,763 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 30874.43 ms (30.87 s)
+2025-12-12 11:19:31,896 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:19:31,897 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:19:44,565 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 12668.69 ms (12.67 s)
+2025-12-12 11:20:48,135 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:20:48,137 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:21:02,347 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 14211.81 ms (14.21 s)
+2025-12-12 11:30:50,035 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:30:50,036 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:31:01,410 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 11375.14 ms (11.38 s)
+2025-12-12 11:38:50,913 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:38:50,913 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:38:58,494 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 7581.19 ms (7.58 s)
+2025-12-12 11:49:37,651 - DEBUG - DEBUG | Entrée dans Pipeline IA : Analyse texte avec Fusion HF + Gemini 
+2025-12-12 11:49:37,651 - INFO - ORCHESTRATION | Début de la tâche : Analyse texte
+2025-12-12 11:49:55,435 - INFO - PERFORMANCE | Fin : Analyse texte | Durée : 17783.85 ms (17.78 s)

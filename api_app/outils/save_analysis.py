@@ -1,11 +1,12 @@
 from sqlalchemy.orm import Session
-from api_app.models import AnalysisLog
+from api_app.models.AnalysisLog import AnalysisLog
 import json
 
 
 
 
-def save_analysis_log(user_id, input_text, analysis_result: dict,db):
+
+def save_analysis_log(user_id : int, input_text, analysis_result: dict,db):
     """
     Sauvegarde  logs d'analyse pour un utilisateur dans la table analysis_logs.
 

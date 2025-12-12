@@ -7,6 +7,7 @@ from ..core.security import verify_token
 from ..logger import logger ,log_task
 from ..outils.save_analysis import save_analysis_log
 from pydantic import ValidationError
+from ..models.Users import USER
 
 
 router = APIRouter( tags=["Analysis"])
@@ -16,6 +17,16 @@ router = APIRouter( tags=["Analysis"])
 
 async def analyze_text(request: analyzeRequest,token = Depends(verify_token), db: Session = Depends(get_db)) :
     text = request.text
+
+    username = token["Username"]
+
+    # Chercher l'utilisateur en base
+    user = db.query(USER).filter(USER.username == username).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="Utilisateur introuvable")
+
+    #  Récupérer l'id réel
+    user_id = user.id
     
     try:
         #  analyse avec logging
@@ -23,7 +34,7 @@ async def analyze_text(request: analyzeRequest,token = Depends(verify_token), db
         print(global_result)
         # Sauvegarde dans analysis_logs
          
-        save_analysis_log(db=db, user_id=token, input_text=text, analysis_result=global_result)
+        save_analysis_log(db=db, user_id=user_id, input_text=text, analysis_result=global_result)
 
         return analyzeResponse(**global_result)
     
@@ -34,5 +45,4 @@ async def analyze_text(request: analyzeRequest,token = Depends(verify_token), db
     except HTTPException as e:
         raise e
     
-    except Exception:
-        raise HTTPException(status_code=500, detail="Erreur critique lors de l'analyse")
+    
