@@ -264,7 +264,8 @@ Plateforme_Orchestration_IA_Backend/
 ├── Readme.md                       
 └── requierements.txt               
 
-```bash
+```
+
 ## Auteur
 
 **Nom :** KHADIJA ELABBIOUI  
